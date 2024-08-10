@@ -1,0 +1,136 @@
+.offers {
+  display: flex;
+  height: 70vh;
+  background: linear-gradient(-90deg, #dab141 30%, #1485852f 70%);
+  margin: 100px auto;
+  padding: 0 60px;
+}
+.left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  line-height: 1.1;
+}
+.left h1 {
+  color: black;
+  font-size: 70px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.left p {
+  font-size: 30px;
+  color: black;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.right img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  background-color: #ff4141;
+  color: #fff;
+  font-weight: 700;
+  padding: 20px 40px;
+  width: 300px;
+  font-size: 25px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #f30000;
+}
+
+@media (max-width: 1280px) {
+  .offers {
+    height: 60vh;
+  }
+  .offers .left {
+    h1 {
+      font-size: 35px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+  .offers .right img {
+    height: 100%;
+    object-fit: contain;
+  }
+}
+@media (max-width: 1024px) {
+  .offers {
+    height: 40vh;
+  }
+  .offers .left {
+    h1 {
+      font-size: 23px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+  .offers .right img {
+    height: 100%;
+    object-fit: contain;
+  }
+}
+@media (max-width: 800px) {
+  .offers {
+    height: 30vh;
+  }
+  .offers .left {
+    h1 {
+      font-size: 25px;
+    }
+    p {
+      font-size: 10px;
+    }
+    .btn {
+      font-size: 15px;
+      width: fit-content;
+    }
+  }
+  .offers .right img {
+    height: 100%;
+    object-fit: contain;
+  }
+}
+@media (max-width: 500px) {
+  .offers {
+    height: 20vh;
+  }
+  .offers .left {
+ display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 25px;
+        flex-direction: row;
+        margin-left: -146px;
+    h1 {
+      font-size: 15px;
+    }
+    p {
+      font-size: 10px;
+    }
+    .btn {
+      font-size: 10px;
+      width: fit-content;
+    }
+  }
+  .offers .right img {
+display: none;    
+  }
+}
