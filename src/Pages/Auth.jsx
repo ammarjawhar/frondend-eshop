@@ -1,7 +1,7 @@
 import './css/Auth.css';
 import { useContext, useState } from 'react';
 import axios from 'axios';
-import { ShopContext } from '../../Context/ShopContext';
+import { ShopContext } from '../Context/ShopContext';
 const Auth = () => {
   const [state, setState] = useState('login');
   const { BASE_URL } = useContext(ShopContext);
