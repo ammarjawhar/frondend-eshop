@@ -12,7 +12,7 @@ const defaultCart = () => {
 };
 
 const ShopContextProider = (props) => {
-  const BASE_URL = 'https://eshop-apis.vercel.app/';
+  const BASE_URL = 'https://eshop-apis.vercel.app';
   const [cartItems, setCartItem] = useState(defaultCart());
   const [all_products, setAllProducts] = useState([]);
 
