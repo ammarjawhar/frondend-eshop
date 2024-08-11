@@ -20,9 +20,7 @@ const Auth = () => {
   };
   const handleSubmite = async (e) => {
     e.preventDefault();
-    const res = await axios.post(`${BASE_URL}/api/user/${state}`, userData, {
-      withCredentials: true,
-    });
+    const res = await axios.post(`${BASE_URL}/api/user/${state}`, userData);
 
     if (res.data.success) {
       alert(res.data.message);

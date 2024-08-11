@@ -8,9 +8,7 @@ const Popular = () => {
   const [popularItems, setPopularItems] = useState([]);
 
   const fetchPopularItems = async () => {
-    const res = await axios.get(`${BASE_URL}/api/product/popular`, {
-      withCredentials: true,
-    });
+    const res = await axios.get(`${BASE_URL}/api/product/popular`);
     if (res.data.success) {
       setPopularItems(res.data.data);
     } else {
