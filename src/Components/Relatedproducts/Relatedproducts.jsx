@@ -9,9 +9,7 @@ const Relatedproducts = ({ category }) => {
   const [data, setData] = useState([]);
 
   const fetchRelatedProducts = async () => {
-    const res = await axios.post(`${BASE_URL}/api/product/related`, {
-      category,
-    });
+    const res = await axios.post(`${BASE_URL}/api/product/related`, category);
     if (res.data.success) {
       setData(res.data.data);
     } else {
