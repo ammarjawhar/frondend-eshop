@@ -8,7 +8,9 @@ const NewCollections = () => {
   const { BASE_URL } = useContext(ShopContext);
   const [new_collection, setNewCollection] = useState([]);
   const fetchNewCollections = async () => {
-    const res = await axios.get(`${BASE_URL}/api/product/newcollection`);
+    const res = await axios.get(`${BASE_URL}/api/product/newcollection`, {
+      withCredentials: true,
+    });
     if (res.data.success) {
       setNewCollection(res.data.data);
     } else {

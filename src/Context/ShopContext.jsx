@@ -17,14 +17,15 @@ const ShopContextProider = (props) => {
   const [all_products, setAllProducts] = useState([]);
 
   const fetchProducts = async () => {
-    const response = await axios.get(`${BASE_URL}/api/product/list`);
+    const response = await axios.get(`${BASE_URL}/api/product/list`, {
+      withCredentials: true,
+    });
     if (response.data.success) {
       setAllProducts(response.data.data);
     } else {
       console.log('error');
     }
   };
-  
 
   const getTotalItems = () => {
     let totalItems = 0;
@@ -39,20 +40,32 @@ const ShopContextProider = (props) => {
     setCartItem((prev) => ({ ...prev, [id]: prev[id] + 1 }));
     if (localStorage.getItem('Auth-Token')) {
       const token = localStorage.getItem('Auth-Token');
-      axios.post(`${BASE_URL}/api/cart/add`, { id, token });
+      axios.post(
+        `${BASE_URL}/api/cart/add`,
+        { id, token },
+        { withCredentials: true }
+      );
     }
   };
   const removeFromCart = (id) => {
     setCartItem((prev) => ({ ...prev, [id]: prev[id] - 1 }));
     if (localStorage.getItem('Auth-Token')) {
       const token = localStorage.getItem('Auth-Token');
-      axios.post(`${BASE_URL}/api/cart/remove`, { id, token });
+      axios.post(
+        `${BASE_URL}/api/cart/remove`,
+        { id, token },
+        { withCredentials: true }
+      );
     }
   };
   const fetchCart = async () => {
     if (localStorage.getItem('Auth-Token')) {
       const token = localStorage.getItem('Auth-Token');
-      const response = await axios.post(`${BASE_URL}/api/cart/list`, { token });
+      const response = await axios.post(
+        `${BASE_URL}/api/cart/list`,
+        { token },
+        { withCredentials: true }
+      );
       if (response.data.success) {
         setCartItem(response.data.data);
       } else {

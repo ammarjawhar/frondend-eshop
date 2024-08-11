@@ -8,7 +8,7 @@ const Auth = () => {
 
   const [userData, setUserData] = useState({
     name: '',
-    email: '', 
+    email: '',
     password: '',
   });
 
@@ -20,7 +20,9 @@ const Auth = () => {
   };
   const handleSubmite = async (e) => {
     e.preventDefault();
-    const res = await axios.post(`${BASE_URL}/api/user/${state}`, userData);
+    const res = await axios.post(`${BASE_URL}/api/user/${state}`, userData, {
+      withCredentials: true,
+    });
 
     if (res.data.success) {
       alert(res.data.message);

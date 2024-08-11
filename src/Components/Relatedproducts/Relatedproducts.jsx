@@ -7,14 +7,17 @@ import { ShopContext } from '../../Context/ShopContext';
 const Relatedproducts = ({ category }) => {
   const { BASE_URL } = useContext(ShopContext);
   const [data, setData] = useState([]);
-  
-
-  
 
   const fetchRelatedProducts = async () => {
-    const res = await axios.post(`${BASE_URL}/api/product/related`, {
-      category,
-    });
+    const res = await axios.post(
+      `${BASE_URL}/api/product/related`,
+      {
+        category,
+      },
+      {
+        withCredentials: true,
+      }
+    );
     if (res.data.success) {
       setData(res.data.data);
     } else {
