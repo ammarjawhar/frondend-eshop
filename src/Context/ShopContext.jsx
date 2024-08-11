@@ -24,6 +24,7 @@ const ShopContextProider = (props) => {
       console.log('error');
     }
   };
+  
 
   const getTotalItems = () => {
     let totalItems = 0;
